@@ -1,3 +1,11 @@
+# news-from-the-wormhole
+
+## Built With 
+- React
+- Tailwindcss
+- Vite
+- [Spaceflight News Api](https://spaceflightnewsapi.net/)
+
 # React Tailwindcss Boilerplate build with Vite
 
 This is a [ReactJS](https://reactjs.org) + [Vite](https://vitejs.dev) boilerplate to be used with [Tailwindcss](https://tailwindcss.com).
@@ -64,4 +72,3 @@ npm run test
 ## License
 
 This project is licensed under the MIT License.
-# news-from-the-wormhole
