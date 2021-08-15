@@ -43,6 +43,7 @@ export default function Menu() {
               >
                 <ul className="flex flex-col lg:flex-row lg:ml-auto list-none">
                   <li className="mx-3">
+                    {/* TODO: make reusable Link component */}
                     <Link
                       to="/"
                       className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
@@ -51,6 +52,7 @@ export default function Menu() {
                     </Link>
                   </li>
                   <li className="mx-3">
+                    {/* TODO: make reusable Link component */}
                     <Link
                       to="/articles"
                       className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
@@ -59,6 +61,7 @@ export default function Menu() {
                     </Link>
                   </li>
                   <li className="mx-4">
+                    {/* TODO: make reusable Link component */}
                     <Link
                       to="/blogposts"
                       className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
