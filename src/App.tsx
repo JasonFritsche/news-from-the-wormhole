@@ -1,10 +1,12 @@
 import React from 'react'
 import Menu from './components/Menu'
+import Home from './views/Home'
 
 function App() {
   return (
-    <div className="lg:flex h-screen bg-gray-200">
+    <div className="h-screen bg-gray-200">
       <Menu />
+      <Home />
     </div>
   )
 }
