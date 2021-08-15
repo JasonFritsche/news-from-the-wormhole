@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Menu() {
   const [menuOpen, setMenuOpen] = React.useState(false)
@@ -42,14 +43,28 @@ export default function Menu() {
               >
                 <ul className="flex flex-col lg:flex-row lg:ml-auto list-none">
                   <li className="mx-3">
-                    <a className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
+                    <Link
+                      to="/"
+                      className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li className="mx-3">
+                    <Link
+                      to="/articles"
+                      className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                    >
                       Articles
-                    </a>
+                    </Link>
                   </li>
                   <li className="mx-4">
-                    <a className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
+                    <Link
+                      to="/blogposts"
+                      className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                    >
                       Blog
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
