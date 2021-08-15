@@ -1,14 +1,16 @@
 # news-from-the-wormhole
 
 ## Built With 
-- [This awesome React/Tailwind/Vite/TypeScript boilerplate](https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate)
+- [This awesome React/Tailwind/Vite/TypeScript boilerplate](https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate) (More on this below)
 - React
 - Tailwindcss
 - Vite
 - [Spaceflight News Api](https://spaceflightnewsapi.net/)
 - [Heroicons](https://heroicons.com/)
 
-# React Tailwindcss Boilerplate build with Vite
+
+
+# React Tailwindcss Boilerplate build with Vite [Link Here](https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate)
 
 This is a [ReactJS](https://reactjs.org) + [Vite](https://vitejs.dev) boilerplate to be used with [Tailwindcss](https://tailwindcss.com).
 
