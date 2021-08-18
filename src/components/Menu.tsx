@@ -5,9 +5,9 @@ export default function Menu() {
   const [menuOpen, setMenuOpen] = React.useState(false)
   return (
     <>
-      <div className="flex w-screen">
+      <div className="flex w-full">
         <div className="w-full">
-          <nav className="flex relative flex-wrap justify-between items-center py-3 px-2 bg-blue-400">
+          <nav className="flex relative flex-wrap justify-between items-center py-3 bg-blue-400">
             <div className="container flex flex-wrap justify-between items-center px-4 mx-auto">
               <div className="flex lg:block relative lg:static justify-between lg:justify-start px-4 w-full lg:w-auto">
                 <a className="inline-block py-2 mr-4 text-sm font-bold leading-relaxed text-white whitespace-nowrap">

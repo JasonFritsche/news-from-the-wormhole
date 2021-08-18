@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import Article from '../components/Article'
 import { IError } from '../models/ApiError'
 import { IArticle } from '../models/Article'
 
 const Articles = () => {
   const [error, setError] = useState<IError | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [items, setItems] = useState<Array<IArticle>>([])
+  const [articles, setArticles] = useState<Array<IArticle>>([])
 
   useEffect(() => {
     fetch('https://api.spaceflightnewsapi.net/v3/articles?_limit=10')
@@ -17,7 +18,7 @@ const Articles = () => {
             setError(result)
           } else {
             setIsLoaded(true)
-            setItems(result)
+            setArticles(result)
           }
         },
         (error: IError) => {
@@ -33,8 +34,13 @@ const Articles = () => {
   } else if (!isLoaded) {
     return <div>Loading...</div>
   } else {
-    console.log(items)
-    return <div>got em</div>
+    return (
+      <div className="flex flex-col items-center">
+        {articles.map((article) => (
+          <Article key={article.id} article={article}></Article>
+        ))}
+      </div>
+    )
   }
 }
 
