@@ -5,8 +5,8 @@ export interface IArticle {
   imageUrl: string
   newsSite: string
   summary: string
-  publishedAt: Date
-  updatedAt: Date
+  publishedAt: string
+  updatedAt: string
   featured: boolean
   launches: Array<IEvent>
   events: Array<IEvent>
