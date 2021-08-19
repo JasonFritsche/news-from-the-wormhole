@@ -7,39 +7,55 @@ interface Props {
 }
 
 const Article: FunctionComponent<Props> = ({ article }) => {
-  console.log(article)
+  const navigateToExternalUrl = (url: string, shouldOpenNewTab = true) =>
+    shouldOpenNewTab ? window.open(url, '_blank') : (window.location.href = url)
   return (
-    <div className="py-1 my-3 w-11/12 md:w-3/4 bg-indigo-200 shadow-xl hover:shadow-md">
-      <div className="flex flex-col px-5 pb-2">
-        <div className="flex flex-col pb-1 border-b-2 border-gray-400 border-solid">
-          <div>
-            <h1 className="text-blue-900">{article.title}</h1>
-          </div>
-          <div className="flex md:flex-row">
-            <div className="mr-4">
-              <h1 className="font-semibold text-gray-800">
-                {article.newsSite}
-              </h1>
+    <div className="p-4 md:w-4/5">
+      <div className="flex flex-col sm:flex-row flex-shrink bg-gray-300 rounded-2xl shadow-xl hover:shadow-md">
+        <div className="flex flex-1">
+          <img
+            className="object-cover overflow-hidden rounded-tl-2xl rounded-bl-2xl"
+            src={article.imageUrl}
+            alt="Article Image"
+          />
+        </div>
+        <div className="flex flex-col flex-1 justify-evenly p-3.5 min-w-0">
+          <h2 className="object-cover text-4xl font-extrabold text-gray-800">
+            {article.title}
+          </h2>
+          <p className="text-gray-600">{article.summary}</p>
+          <div className="flex justify-between">
+            <div className="flex flex-col items-center md:items-start pr-2 border-r-2 border-gray-400 border-solid md:border-none">
+              <div>
+                <a className="pt-1 text-sm font-bold text-purple-800">Source</a>
+              </div>
+              <div>
+                <a className="pt-1 text-sm text-purple-700">
+                  {article.newsSite}
+                </a>
+              </div>
+            </div>
+            <div className="flex flex-col items-center md:items-start pr-2 border-r-2 border-gray-400 border-solid md:border-none">
+              <div>
+                <a className="pt-1 text-sm font-bold text-purple-800">
+                  Published
+                </a>
+              </div>
+              <div>
+                <a className="pt-1 text-sm text-purple-700">
+                  {formattedDate(article.publishedAt)}
+                </a>
+              </div>
             </div>
             <div>
-              <h1 className="italic font-thin text-gray-600">
-                {formattedDate(article.updatedAt)}
-              </h1>
+              <button
+                onClick={() => navigateToExternalUrl(article.url, true)}
+                className="inline-block p-2 pt-1 text-center text-purple-800 hover:text-purple-100 whitespace-nowrap hover:bg-purple-800 rounded-md border border-purple-800 hover:shadow-xl"
+                type="button"
+              >
+                View Article
+              </button>
             </div>
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row">
-          <div className="flex flex-1 order-2 md:order-1 p-0 md:p-2 lg:p-3">
-            <img
-              className="object-cover overflow-hidden"
-              src={article.imageUrl}
-              alt="article image"
-            />
-          </div>
-          <div className="flex flex-1 order-1 md:order-2 lg:p-3 md:pt-5 md:pl-2">
-            <p className="text-sm font-medium text-gray-800">
-              {article.summary}
-            </p>
           </div>
         </div>
       </div>
