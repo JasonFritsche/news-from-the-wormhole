@@ -5,9 +5,10 @@ import { formattedDate } from '../util/DateUtil'
 
 interface Props {
   article: IArticle
+  type: string
 }
 
-const Article: FunctionComponent<Props> = ({ article }) => {
+const Article: FunctionComponent<Props> = ({ article, type }) => {
   const navigateToExternalUrl = (url: string, shouldOpenNewTab = true) =>
     shouldOpenNewTab ? window.open(url, '_blank') : (window.location.href = url)
   return (
@@ -51,7 +52,7 @@ const Article: FunctionComponent<Props> = ({ article }) => {
               className="inline-block p-2 pt-1 text-center text-purple-800 hover:text-purple-100 whitespace-nowrap hover:bg-purple-800 rounded-md border border-purple-800 hover:shadow-xl"
               type="button"
             >
-              View Article
+              View {type}
             </button>
           </div>
         </div>
