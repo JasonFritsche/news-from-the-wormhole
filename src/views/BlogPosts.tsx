@@ -1,11 +1,6 @@
 import React from 'react'
+import FetchArticles from '../components/FetchArticles'
 
-const BlogPosts = () => {
-  return (
-    <div>
-      <h1>Hello this is blog post</h1>
-    </div>
-  )
-}
+const BlogPosts = () => <FetchArticles articleType="blogs" />
 
 export default BlogPosts
