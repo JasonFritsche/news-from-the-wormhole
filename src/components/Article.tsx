@@ -10,7 +10,7 @@ const Article: FunctionComponent<Props> = ({ article }) => {
   const navigateToExternalUrl = (url: string, shouldOpenNewTab = true) =>
     shouldOpenNewTab ? window.open(url, '_blank') : (window.location.href = url)
   return (
-    <div className="p-4 md:w-4/5">
+    <div className="z-50 p-4 md:w-4/5 opacity-90 hover:opacity-100">
       <div className="flex flex-col sm:flex-row flex-shrink bg-gray-300 rounded-2xl shadow-xl hover:shadow-md">
         <div className="flex flex-1">
           <img

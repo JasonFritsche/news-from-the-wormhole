@@ -3,7 +3,7 @@ import nftwlogo from '../../assets/nftwlogo.png'
 
 const Home = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col flex-1 bg-gray-200 opacity-50">
       <div className="flex flex-row justify-around mt-4 mb-8">
         <div>
           <h1>Most Recent Articles</h1>
