@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Menu() {
+const Menu: FunctionComponent = () => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   return (
     <>
@@ -78,3 +78,5 @@ export default function Menu() {
     </>
   )
 }
+
+export default Menu
