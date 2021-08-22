@@ -23,7 +23,7 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
             setIsLoaded(true)
             setError(result)
           } else {
-            setIsLoaded(false)
+            setIsLoaded(true)
             articleType === 'articles'
               ? setArticles(result)
               : setBlogPosts(result)
