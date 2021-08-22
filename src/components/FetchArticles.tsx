@@ -2,6 +2,7 @@ import React, { useState, useEffect, FunctionComponent } from 'react'
 import Article from '../components/Article'
 import { IError } from '../models/ApiError'
 import { IArticle } from '../models/Article'
+import Loader from './Loader'
 
 interface Props {
   articleType: string
@@ -55,7 +56,11 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   if (error) {
     return <div>Error: an error occurred</div>
   } else if (!isLoaded) {
-    return <div>Loading...</div>
+    return (
+      <div className="flex flex-row justify-center mt-36">
+        <Loader />
+      </div>
+    )
   } else {
     return <div className="flex flex-col items-center">{content()}</div>
   }
