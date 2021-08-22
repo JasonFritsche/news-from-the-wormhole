@@ -2,6 +2,7 @@ import React, { useState, useEffect, FunctionComponent } from 'react'
 import Article from '../components/Article'
 import { IError } from '../models/ApiError'
 import { IArticle } from '../models/Article'
+import Card from './Card'
 import Loader from './Loader'
 
 interface Props {
@@ -53,6 +54,26 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
     }
   }
 
+  const cardHeaderContents = (articleType: string) => {
+    const headerTitle = articleType === 'articles' ? 'Articles' : 'Blog Posts'
+    return (
+      <React.Fragment>
+        <div className="flex flex-col flex-1 p-3">
+          <div className="flex flex-row flex-1 justify-center">
+            <h1 className="text-4xl font-bold text-center text-gray-800">
+              {headerTitle}
+            </h1>
+          </div>
+          <div className="flex flex-row flex-1 justify-center">
+            <h2>
+              Read the latest space flight {headerTitle.toLowerCase()} here
+            </h2>
+          </div>
+        </div>
+      </React.Fragment>
+    )
+  }
+
   if (error) {
     return <div>Error: an error occurred</div>
   } else if (!isLoaded) {
@@ -62,7 +83,12 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
       </div>
     )
   } else {
-    return <div className="flex flex-col items-center">{content()}</div>
+    return (
+      <div className="flex flex-col items-center">
+        <Card>{cardHeaderContents(articleType)}</Card>
+        {content()}
+      </div>
+    )
   }
 }
 
