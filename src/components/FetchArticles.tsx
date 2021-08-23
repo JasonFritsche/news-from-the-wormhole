@@ -20,7 +20,6 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
 
   useEffect(() => {
     const loadArticles = async () => {
-      setIsLoaded(false)
       const newArticles = await getArticles(startEntries, articleType)
       articleType === 'articles'
         ? setArticles((prev) => [...new Set([...prev, ...newArticles])])
