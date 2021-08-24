@@ -45,7 +45,7 @@ const Menu: FunctionComponent = () => {
                   <li className="mx-3">
                     {/* TODO: make reusable Link component */}
                     <Link
-                      to="/"
+                      to="/news-from-the-wormhole"
                       className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
                     >
                       Home
@@ -54,7 +54,7 @@ const Menu: FunctionComponent = () => {
                   <li className="mx-3">
                     {/* TODO: make reusable Link component */}
                     <Link
-                      to="/articles"
+                      to="/news-from-the-wormhole/articles"
                       className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
                     >
                       Articles
@@ -63,7 +63,7 @@ const Menu: FunctionComponent = () => {
                   <li className="mx-4">
                     {/* TODO: make reusable Link component */}
                     <Link
-                      to="/blogposts"
+                      to="/news-from-the-wormhole/blogposts"
                       className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
                     >
                       Blog
