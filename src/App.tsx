@@ -5,6 +5,7 @@ import Articles from './views/Articles'
 import BlogPosts from './views/BlogPosts'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Particles from 'react-tsparticles'
+import NoRouteMatch from './views/NoRouteMatch'
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -543,6 +544,9 @@ function App() {
             </Route>
             <Route path="/news-from-the-wormhole/blogposts">
               <BlogPosts />
+            </Route>
+            <Route path="*">
+              <NoRouteMatch />
             </Route>
           </Switch>
         </div>
