@@ -6,6 +6,7 @@ import { IArticle } from '../models/Article'
 import Card from './Card'
 import Loader from './Loader'
 import { debounce } from 'lodash'
+import Header from './Header'
 
 interface Props {
   articleType: string
@@ -53,22 +54,7 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
 
   const cardHeaderContents = (articleType: string) => {
     const headerTitle = articleType === 'articles' ? 'Articles' : 'Blog Posts'
-    return (
-      <React.Fragment>
-        <div className="flex flex-col flex-1 p-3">
-          <div className="flex flex-row flex-1 justify-center">
-            <h1 className="font-titillium-web text-2xl md:text-4xl lg:text-7xl font-bold text-center text-purple-900">
-              {headerTitle}
-            </h1>
-          </div>
-          <div className="flex flex-row flex-1 justify-center">
-            <h2 className="font-titillium-web text-lg md:text-2xl lg:text-3xl leading-4 text-gray-700">
-              Read the latest space flight {headerTitle.toLowerCase()}
-            </h2>
-          </div>
-        </div>
-      </React.Fragment>
-    )
+    return <Header title={headerTitle} />
   }
 
   if (error) {
