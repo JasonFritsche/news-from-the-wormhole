@@ -53,8 +53,7 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   }
 
   const cardHeaderContents = (articleType: string) => {
-    const headerTitle = articleType === 'articles' ? 'Articles' : 'Blog Posts'
-    return <Header title={headerTitle} />
+    return <Header articleType={articleType} />
   }
 
   if (error) {
