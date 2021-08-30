@@ -3,7 +3,6 @@ import blogAstronautImg from '../../assets/blog-astronaut.png'
 import articleAstronautImg from '../../assets/article-astronaut.png'
 
 interface Props {
-  title: string
   articleType: string
 }
 
