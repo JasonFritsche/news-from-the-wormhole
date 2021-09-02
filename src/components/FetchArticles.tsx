@@ -7,6 +7,7 @@ import Card from './Card'
 import Loader from './Loader'
 import { debounce } from 'lodash'
 import Header from './Header'
+import AppError from './AppError'
 
 interface Props {
   articleType: string
@@ -21,11 +22,19 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
 
   useEffect(() => {
     const loadArticles = async () => {
-      const newArticles = await getArticles(startEntries, articleType)
-      articleType === 'articles'
-        ? setArticles((prev) => [...new Set([...prev, ...newArticles])])
-        : setBlogPosts((prev) => [...new Set([...prev, ...newArticles])])
-      setIsLoaded(true)
+      const newArticles = await getArticles(startEntries, articleType).catch(
+        (err) => {
+          console.log(err)
+          setError(err)
+        }
+      )
+      console.log(newArticles)
+      if (newArticles) {
+        articleType === 'articles'
+          ? setArticles((prev) => [...new Set([...prev, ...newArticles])])
+          : setBlogPosts((prev) => [...new Set([...prev, ...newArticles])])
+        setIsLoaded(true)
+      }
     }
 
     loadArticles()
@@ -57,7 +66,7 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   }
 
   if (error) {
-    return <div>Error: an error occurred</div>
+    return <AppError></AppError>
   } else if (!isLoaded) {
     return (
       <div className="flex flex-row justify-center mt-36">
