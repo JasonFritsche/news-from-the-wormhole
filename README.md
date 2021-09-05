@@ -1,4 +1,4 @@
-# news from the wormhole
+# News From the Wormhole
 Read the latest news articles and blog posts regarding space flight.
 
 ## Built With 
@@ -10,8 +10,6 @@ Read the latest news articles and blog posts regarding space flight.
 - [Heroicons](https://heroicons.com/)
 
 ## Contribute [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-_PR's will be merged by either @JasonFritsche or @cdrani_ 
 
 Please feel free to contribute to this open source project. First timers are more than welcome. Take a look at the open issues under the [issues tab](https://github.com/JasonFritsche/news-from-the-wormhole/issues). If you identify a bug, or would like to implement a feature that isn't posted under the issues, please feel free to submit a new issue. Also, if you see anything that needs to be updated in the README file, you're more than welcome to update it. **For issues you want to work on please assign yourself to the issue.**
 
