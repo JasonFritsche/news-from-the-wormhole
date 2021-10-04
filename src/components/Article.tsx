@@ -49,7 +49,7 @@ const Article: FunctionComponent<Props> = ({ article, type }) => {
           <div>
             <button
               onClick={() => navigateToExternalUrl(article.url, true)}
-              className="inline-block p-2 pt-1 text-center text-purple-800 hover:text-purple-100 whitespace-nowrap hover:bg-purple-800 rounded-md border border-purple-800 hover:shadow-xl"
+              className="inline-block p-2 text-center text-purple-800 hover:text-purple-100 whitespace-nowrap hover:bg-purple-800 rounded-md border border-purple-800 hover:shadow-xl"
               type="button"
             >
               View {type}
