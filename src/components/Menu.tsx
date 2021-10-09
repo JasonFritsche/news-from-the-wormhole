@@ -36,8 +36,8 @@ const Menu: FunctionComponent = () => {
               </div>
               <div
                 className={
-                  'lg:flex flex-grow items-center' +
-                  (menuOpen ? ' flex' : ' hidden')
+                  'lg:flex lg:h-auto flex-grow items-center overflow-hidden transition-height duration-1000' +
+                  (menuOpen ? ' h-24' : ' h-0')
                 }
                 id="example-navbar-info"
               >
