@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .article-meta-label {
+        @apply flex flex-col items-center md:items-start pr-2 border-r-2 m-1 md:m-0 border-gray-400 border-solid md:border-none;
+    }
+}

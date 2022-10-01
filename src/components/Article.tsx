@@ -26,7 +26,7 @@ const Article: FunctionComponent<Props> = ({ article, type }) => {
         </h2>
         <p className="text-gray-600">{article.summary}</p>
         <div className="flex justify-between">
-          <div className="flex flex-col items-center md:items-start pr-2 border-r-2 border-gray-400 border-solid md:border-none">
+          <div className="farticle-meta-label">
             <div>
               <a className="pt-1 text-sm font-bold text-purple-800">Source</a>
             </div>
@@ -34,7 +34,7 @@ const Article: FunctionComponent<Props> = ({ article, type }) => {
               <a className="pt-1 text-sm text-purple-700">{article.newsSite}</a>
             </div>
           </div>
-          <div className="flex flex-col items-center md:items-start pr-2 border-r-2 border-gray-400 border-solid md:border-none">
+          <div className="article-meta-label">
             <div>
               <a className="pt-1 text-sm font-bold text-purple-800">
                 Published
