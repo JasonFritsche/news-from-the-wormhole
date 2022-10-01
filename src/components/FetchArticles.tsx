@@ -28,7 +28,7 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
           setError(err)
         }
       )
-      console.log(newArticles)
+
       if (newArticles) {
         articleType === 'articles'
           ? setArticles((prev) => [...new Set([...prev, ...newArticles])])

@@ -22,7 +22,7 @@ const Header: FunctionComponent<Props> = ({ articleType }) => {
         </div>
         <div className="flex flex-row flex-1 justify-center">
           <h2 className="font-titillium-web text-lg md:text-2xl lg:text-3xl leading-4 text-gray-700">
-            Read the latest space flight {title.toLowerCase()}
+            Read the latest space flight {title.toLowerCase()}.
           </h2>
         </div>
       </div>
