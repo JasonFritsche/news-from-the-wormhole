@@ -11,7 +11,11 @@ const Home = () => {
         <h1>Space Flight News and Blog Posts</h1>
       </div>
       <div className="flex flex-row justify-center text-indigo-900">
-        <p>Powered by SpaceFlight News API</p>
+        <p>Powered by&nbsp;
+          <a className='text-indigo-900' href='https://www.spaceflightnewsapi.net/' target="_blank" rel="noreferrer noopener">
+            SpaceFlight News API
+          </a>
+        </p>
       </div>
     </div>
   )
