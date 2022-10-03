@@ -5,7 +5,7 @@ const Menu: FunctionComponent = () => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   return (
     <>
-      <div className="flex w-full">
+      <div className="flex w-full z-50 sticky top-[0px]">
         <div className="w-full">
           <nav className="flex relative flex-wrap justify-between items-center py-3 bg-blue-400">
             <div className="container flex flex-wrap justify-between items-center px-4 mx-auto">
