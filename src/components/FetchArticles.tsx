@@ -40,15 +40,16 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
     loadArticles()
   }, [startEntries, articleType])
 
-  window.onscroll = debounce(() => {
+  window.onscroll=debounce(() => {
     if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
+      Math.abs(window.innerHeight + document.documentElement.scrollTop - document.documentElement.offsetHeight)<=2
     ) {
+      setIsLoaded(false);
       setStartEntries(startEntries + 20)
     }
-  }, 100)
+  },100)
 
+ 
   const content = () => {
     if (articleType === 'articles') {
       return articles.map((article, index) => (
@@ -67,18 +68,18 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
 
   if (error) {
     return <AppError></AppError>
-  } else if (!isLoaded) {
+  } 
+  else {
     return (
-      <div className="flex flex-row justify-center mt-36">
+      <>
+        <div className="flex flex-col items-center">
+          <Card>{cardHeaderContents(articleType)}</Card>
+          {content()}
+        </div>
+        {!isLoaded && (<div className="flex flex-row justify-center mt-0">
         <Loader />
-      </div>
-    )
-  } else {
-    return (
-      <div className="flex overflow-auto flex-col items-center h-screen">
-        <Card>{cardHeaderContents(articleType)}</Card>
-        {content()}
-      </div>
+        </div>)}
+      </>
     )
   }
 }
