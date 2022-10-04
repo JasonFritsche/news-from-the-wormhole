@@ -17,7 +17,7 @@ function App() {
   return (
     <React.Fragment>
       <Particles
-        className="fixed z-0 opacity-95"
+        className="fixed z-0 opacity-300"
         id="tsparticles"
         options={ particlesOptions }
       />

@@ -10,7 +10,7 @@ const Menu: FunctionComponent = () => {
           <nav className="flex relative flex-wrap justify-between items-center py-3 bg-blue-400">
             <div className="container flex flex-wrap justify-between items-center px-4 mx-auto">
               <div className="flex lg:block relative lg:static justify-between lg:justify-start px-4 w-full lg:w-auto">
-                <a className="inline-block py-2 mr-4 text-sm font-bold leading-relaxed text-white whitespace-nowrap">
+                <a className="inline-block py-2 mr-4 text-lg font-bold leading-relaxed text-white whitespace-nowrap">
                   News From the Wormhole
                 </a>
                 <button
@@ -46,7 +46,7 @@ const Menu: FunctionComponent = () => {
                     {/* TODO: make reusable Link component */}
                     <Link
                       to="/news-from-the-wormhole"
-                      className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                      className="flex items-center py-2 px-3 rounded-md text-md font-bold leading-snug text-white uppercase  hover:bg-green-500"
                     >
                       Home
                     </Link>
@@ -55,7 +55,7 @@ const Menu: FunctionComponent = () => {
                     {/* TODO: make reusable Link component */}
                     <Link
                       to="/news-from-the-wormhole/articles"
-                      className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                      className="flex items-center py-2 px-3 rounded-md text-md font-bold leading-snug text-white uppercase hover:bg-green-500"
                     >
                       Articles
                     </Link>
@@ -64,7 +64,7 @@ const Menu: FunctionComponent = () => {
                     {/* TODO: make reusable Link component */}
                     <Link
                       to="/news-from-the-wormhole/blogposts"
-                      className="flex items-center py-2 px-3 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                      className="flex items-center py-2 px-3 rounded-md text-md font-bold leading-snug text-white uppercase hover:bg-green-500"
                     >
                       Blog
                     </Link>
