@@ -5,17 +5,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'titillium-web': ['Titillium Web', 'sans-serif']
+        'titillium-web': ['Titillium Web', 'sans-serif'],
+        montserrat: ['Montserrat Alternates', 'sans-serif']
       },
       transitionProperty: {
-        'height': 'height'
+        height: 'height'
       }
     }
   },
   variants: {
     extend: {}
   },
-  plugins: [
-    require("tailwindcss-animation-delay"),
-  ]
+  plugins: [require('tailwindcss-animation-delay')]
 }
