@@ -9,7 +9,7 @@ const Home = () => {
           <img className="m-auto" src={nftwlogo} alt="logo image" />
         </div>
         <div className="m-2">
-          <h1 className="font-montserrat text-base md:text-xl font-bold text-gray-700">
+          <h1 className="font-montserrat text-base md:text-xl font-bold text-gray-700 hover:cursor-default">
             Space Flight News and Blog Posts
           </h1>
         </div>
