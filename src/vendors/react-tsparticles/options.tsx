@@ -1,4 +1,4 @@
-import { IOptions, ISourceOptions, RecursivePartial, } from "tsparticles"
+import { IOptions, ISourceOptions, RecursivePartial } from 'tsparticles'
 
 const particlesOptions: ISourceOptions = {
   autoPlay: true,
@@ -28,99 +28,6 @@ const particlesOptions: ISourceOptions = {
   detectRetina: true,
   duration: 0,
   fpsLimit: 40,
-  interactivity: {
-    detectsOn: 'canvas',
-    events: {
-      onClick: {
-        enable: true,
-        mode: 'push'
-      },
-      onHover: {
-        enable: false,
-        mode: 'repulse',
-        parallax: {
-          enable: false,
-          force: 2,
-          smooth: 10
-        }
-      },
-      resize: true
-    },
-    modes: {
-      attract: {
-        distance: 200,
-        duration: 0.4,
-        factor: 1,
-        maxSpeed: 50,
-        speed: 1
-      },
-      bubble: {
-        distance: 400,
-        duration: 2,
-        mix: false,
-        opacity: 0.8,
-        size: 40
-      },
-      connect: {
-        distance: 80,
-        links: {
-          opacity: 0.5
-        },
-        radius: 60
-      },
-      grab: {
-        distance: 400,
-        links: {
-          blink: false,
-          consent: false,
-          opacity: 1
-        }
-      },
-      light: {
-        area: {
-          gradient: {
-            start: {
-              value: '#ffffff'
-            },
-            stop: {
-              value: '#000000'
-            }
-          },
-          radius: 1000
-        },
-        shadow: {
-          color: {
-            value: '#000000'
-          },
-          length: 2000
-        }
-      },
-      push: {
-        default: true,
-        groups: ['z5000', 'z7500', 'z2500', 'z1000'],
-        quantity: 4
-      },
-      remove: {
-        quantity: 2
-      },
-      repulse: {
-        distance: 200,
-        duration: 0.4,
-        factor: 100,
-        speed: 1,
-        maxSpeed: 50
-      },
-      slow: {
-        factor: 3,
-        radius: 200
-      },
-      trail: {
-        delay: 1,
-        pauseOnStop: false,
-        quantity: 1
-      }
-    }
-  },
   manualParticles: [],
   motion: {
     disable: false,
@@ -292,7 +199,7 @@ const particlesOptions: ISourceOptions = {
       drift: 0,
       enable: true,
       gravity: {
-        acceleration: 9.81,
+        acceleration: 6,
         enable: false,
         inverse: false,
         maxSpeed: 50
@@ -491,6 +398,44 @@ const particlesOptions: ISourceOptions = {
       velocityRate: 1
     }
   },
+  interactivity: {
+    detect_on: 'canvas',
+    events: {
+      onhover: {
+        enable: true,
+        mode: 'bubble'
+      },
+      onclick: {
+        enable: true,
+        mode: 'repulse'
+      },
+      resize: true
+    },
+    modes: {
+      grab: {
+        distance: 400,
+        line_linked: {
+          opacity: 1
+        }
+      },
+      bubble: {
+        distance: 250,
+        size: 0,
+        duration: 2,
+        opacity: 0
+      },
+      repulse: {
+        distance: 400,
+        duration: 0.4
+      },
+      push: {
+        particles_nb: 4
+      },
+      remove: {
+        particles_nb: 2
+      }
+    }
+  },
   pauseOnBlur: true,
   pauseOnOutsideViewport: true,
   responsive: [],
@@ -514,4 +459,4 @@ const particlesOptions: ISourceOptions = {
   }
 }
 
-export default particlesOptions;
+export default particlesOptions
