@@ -8,6 +8,7 @@ import Loader from './Loader'
 import { debounce } from 'lodash'
 import Header from './Header'
 import AppError from './AppError'
+import Apierror from './Apierror'
 
 interface Props {
   articleType: string
@@ -15,25 +16,35 @@ interface Props {
 
 const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   const [error, setError] = useState<IError | null>(null)
+  const [apiError, setApiError] = useState<IError>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [articles, setArticles] = useState<Array<IArticle>>([])
   const [blogPosts, setBlogPosts] = useState<Array<IArticle>>([])
   const [startEntries, setStartEntries] = useState(20)
 
   useEffect(() => {
+    // setError(Error)
     const loadArticles = async () => {
-      const newArticles = await getArticles(startEntries, articleType).catch(
+      const data = await getArticles(startEntries, articleType)
+      .catch(
         (err) => {
           console.log(err)
           setError(err)
         }
       )
+      console.log(data);
 
-      if (newArticles) {
+
+      if (data.success) {
         articleType === 'articles'
-          ? setArticles((prev) => [...new Set([...prev, ...newArticles])])
-          : setBlogPosts((prev) => [...new Set([...prev, ...newArticles])])
+          ? setArticles((prev) => [...new Set([...prev, ...data.articles])])
+          : setBlogPosts((prev) => [...new Set([...prev, ...data.articles])])
         setIsLoaded(true)
+      }
+      if(data.success == false){
+        setApiError(data.error)
+        // console.log(apiError);
+
       }
     }
 
@@ -49,7 +60,7 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
     }
   },100)
 
- 
+
   const content = () => {
     if (articleType === 'articles') {
       return articles.map((article, index) => (
@@ -68,7 +79,10 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
 
   if (error) {
     return <AppError></AppError>
-  } 
+  }
+  if (apiError) {
+    return <Apierror></Apierror>
+  }
   else {
     return (
       <>

@@ -2,10 +2,17 @@ export const getArticles = async (
   startEntries: number,
   articleType: string
 ) => {
-  const articles = await (
-    await fetch(
-      `https://api.spaceflightnewsapi.net/v3/${articleType}?_limit=${startEntries}`
-    )
-  ).json()
-  return articles
+  try {
+    const articles = await (
+      await fetch(
+        `https://api.spaceflightnewsapi.net/v/${articleType}?_limit=${startEntries}`
+      )
+    ).json()
+    return {success:true,articles:articles}
+  } catch (error) {
+    // console.log(error);
+    return {success:false,error:error}
+
+  }
+
 }
