@@ -23,7 +23,6 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   const [startEntries, setStartEntries] = useState(20)
 
   useEffect(() => {
-    // setError(Error)
     const loadArticles = async () => {
       const data = await getArticles(startEntries, articleType)
       .catch(
