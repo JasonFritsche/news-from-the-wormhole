@@ -10,9 +10,7 @@ export const getArticles = async (
     ).json()
     return {success:true,articles:articles}
   } catch (error) {
-    // console.log(error);
     return {success:false,error:error}
-
   }
 
 }
