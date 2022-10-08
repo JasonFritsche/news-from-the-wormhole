@@ -1,25 +1,29 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import Menu from './components/Menu'
 import Home from './views/Home'
 import Articles from './views/Articles'
 import BlogPosts from './views/BlogPosts'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import type { Container, Engine } from 'tsparticles-engine'
 import Particles from 'react-tsparticles'
+import { loadFull } from 'tsparticles'
 import particlesOptions from './vendors/react-tsparticles/options'
 import NoRouteMatch from './views/NoRouteMatch'
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // const particlesInit = (particles: any) => {
-  //   particles.loadJSON('tsparticles', '../particles.config.json')
-  // }
+
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadFull(engine)
+  }, [])
 
   return (
     <React.Fragment>
       <Particles
         className="fixed z-0 opacity-300"
         id="tsparticles"
-        options={ particlesOptions }
+        init={particlesInit}
+        options={particlesOptions}
       />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen bg-gray-200">

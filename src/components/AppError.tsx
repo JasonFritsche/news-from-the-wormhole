@@ -4,24 +4,14 @@ import astronautimg from '../../assets/404-astronaut.png'
 
 const AppError = () => {
   return (
-    <div className="flex overflow-auto flex-col items-center h-screen">
-      <Card>
-        <div className="flex flex-col flex-1 p-3">
-          <div className="flex flex-row flex-1 justify-center">
-            <h1 className="font-titillium-web text-2xl md:text-3xl lg:text-4xl font-bold text-center text-purple-900">
-              An error occurred, please try again later...
-            </h1>
-          </div>
-          <div className="flex flex-row flex-1 justify-center">
-            <img
-              className="object-contain lg:object-scale-down w-full h-96"
-              src={astronautimg}
-              alt="logo image"
-            />
-          </div>
-        </div>
-      </Card>
-    </div>
+    <React.Fragment>
+      <div className='z-40 p-4 mt-5 text-center'>
+          <h2 className="font-titillium-web text-lg text-white md:text-2xl lg:text-3xl leading-4">
+          An error occurred, please try again later...
+          </h2>
+          <hr className='h-1 w-24 bg-white mt-5 inline-block rounded-sm'/>
+      </div>
+    </React.Fragment>
   )
 }
 

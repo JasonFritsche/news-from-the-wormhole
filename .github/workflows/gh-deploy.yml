@@ -1,0 +1,32 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  gh-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v3
+
+      - name: Install 📦
+        run: npm install
+
+      - name: Lint ⚡️
+        run: npm run lint
+
+      - name: Test 🐞
+        run: npm run test
+
+      - name: Build 🛠
+        run: npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
+
+
+
