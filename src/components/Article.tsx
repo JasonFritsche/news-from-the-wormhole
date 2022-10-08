@@ -15,16 +15,16 @@ const Article: FunctionComponent<Props> = ({ article, type }) => {
     <Card>
       <div className="flex flex-1">
         <img
-          className="object-cover overflow-hidden rounded-tl-2xl rounded-bl-2xl"
+          className="object-cover h-full w-full overflow-hidden rounded-tl-2xl rounded-bl-2xl"
           src={article.imageUrl}
           alt="Article Image"
         />
       </div>
-      <div className="flex flex-col flex-1 justify-evenly p-3.5 min-w-0">
-        <h2 className="object-cover text-4xl font-extrabold text-gray-800">
+      <div className="flex flex-col flex-1 justify-start gap-12 p-3.5 min-w-0">
+        <h2 className="object-cover text-4xl font-extrabold text-blue-200">
           {article.title}
         </h2>
-        <p className="text-gray-600">{article.summary}</p>
+        <p className="text-gray-300">{article.summary}</p>
         <div className="flex justify-between">
           <div className="farticle-meta-label">
             <div>

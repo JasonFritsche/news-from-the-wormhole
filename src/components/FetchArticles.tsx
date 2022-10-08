@@ -67,13 +67,15 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   }
 
   if (error) {
-    return <AppError></AppError>
+    return <AppError />
   } 
   else {
     return (
       <>
         <div className="flex flex-col items-center">
-          <Card>{cardHeaderContents(articleType)}</Card>
+        {/* <Card> */}
+        <Header articleType={articleType} />
+        {/* </Card> */}
           {content()}
         </div>
         {!isLoaded && (<div className="flex flex-row justify-center mt-0">
