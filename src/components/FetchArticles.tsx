@@ -16,7 +16,7 @@ interface Props {
 
 const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   const [error, setError] = useState<IError | null>(null)
-  const [apiError, setApiError] = useState<IError>(null)
+  const [apiError, setApiError] = useState<IError | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [articles, setArticles] = useState<Array<IArticle>>([])
   const [blogPosts, setBlogPosts] = useState<Array<IArticle>>([])
@@ -24,15 +24,11 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
 
   useEffect(() => {
     const loadArticles = async () => {
-      const data = await getArticles(startEntries, articleType)
-      .catch(
-        (err) => {
-          console.log(err)
-          setError(err)
-        }
-      )
-      console.log(data);
-
+      const data = await getArticles(startEntries, articleType).catch((err) => {
+        console.log(err)
+        setError(err)
+      })
+      console.log(data)
 
       if (data.success) {
         articleType === 'articles'
@@ -40,25 +36,27 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
           : setBlogPosts((prev) => [...new Set([...prev, ...data.articles])])
         setIsLoaded(true)
       }
-      if(data.success == false){
+      if (data.success == false) {
         setApiError(data.error)
         // console.log(apiError);
-
       }
     }
 
     loadArticles()
   }, [startEntries, articleType])
 
-  window.onscroll=debounce(() => {
+  window.onscroll = debounce(() => {
     if (
-      Math.abs(window.innerHeight + document.documentElement.scrollTop - document.documentElement.offsetHeight)<=2
+      Math.abs(
+        window.innerHeight +
+          document.documentElement.scrollTop -
+          document.documentElement.offsetHeight
+      ) <= 2
     ) {
-      setIsLoaded(false);
+      setIsLoaded(false)
       setStartEntries(startEntries + 20)
     }
-  },100)
-
+  }, 100)
 
   const content = () => {
     if (articleType === 'articles') {
@@ -81,19 +79,20 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
   }
   if (apiError) {
     return <Apierror></Apierror>
-  }
-  else {
+  } else {
     return (
       <>
         <div className="flex flex-col items-center">
-        {/* <Card> */}
-        <Header articleType={articleType} />
-        {/* </Card> */}
+          {/* <Card> */}
+          <Header articleType={articleType} />
+          {/* </Card> */}
           {content()}
         </div>
-        {!isLoaded && (<div className="flex flex-row justify-center mt-0">
-        <Loader />
-        </div>)}
+        {!isLoaded && (
+          <div className="mt-0 flex flex-row justify-center">
+            <Loader />
+          </div>
+        )}
       </>
     )
   }

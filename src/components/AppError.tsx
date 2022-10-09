@@ -1,15 +1,13 @@
 import React from 'react'
-import Card from '../components/Card'
-import astronautimg from '../../assets/404-astronaut.png'
 
 const AppError = () => {
   return (
     <React.Fragment>
-      <div className='z-40 p-4 mt-5 text-center'>
-          <h2 className="font-titillium-web text-lg text-white md:text-2xl lg:text-3xl leading-4">
+      <div className="z-40 mt-5 p-4 text-center">
+        <h2 className="font-titillium-web text-lg leading-4 text-white md:text-2xl lg:text-3xl">
           An error occurred, please try again later...
-          </h2>
-          <hr className='h-1 w-24 bg-white mt-5 inline-block rounded-sm'/>
+        </h2>
+        <hr className="mt-5 inline-block h-1 w-24 rounded-sm bg-white" />
       </div>
     </React.Fragment>
   )

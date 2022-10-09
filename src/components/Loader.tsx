@@ -2,12 +2,14 @@ import React, { FunctionComponent } from 'react'
 
 const Loader: FunctionComponent = () => {
   return (
-    <div className="flex flex-col items-center mb-[10px]">
-      <div className="flex z-10 flex-row items-baseline">
-        <h1 className="text-4xl text-indigo-700 font-titillium-web animate-pulse">Loading</h1>
-        <div className='w-5 h-5 bg-indigo-500 animation-delay-100 rounded-full animate-pulse ml-1'></div>
-        <div className='w-5 h-5 bg-indigo-500 animation-delay-300 rounded-full animate-pulse ml-1'></div>
-        <div className='w-5 h-5 bg-indigo-500 animation-delay-500 rounded-full animate-pulse ml-1'></div>
+    <div className="mb-[10px] flex flex-col items-center">
+      <div className="z-10 flex flex-row items-baseline">
+        <h1 className="animate-pulse font-titillium-web text-4xl text-indigo-700">
+          Loading
+        </h1>
+        <div className="ml-1 h-5 w-5 animate-pulse rounded-full bg-indigo-500 animation-delay-100"></div>
+        <div className="ml-1 h-5 w-5 animate-pulse rounded-full bg-indigo-500 animation-delay-300"></div>
+        <div className="ml-1 h-5 w-5 animate-pulse rounded-full bg-indigo-500 animation-delay-500"></div>
       </div>
     </div>
   )

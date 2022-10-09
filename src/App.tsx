@@ -20,13 +20,13 @@ function App() {
   return (
     <React.Fragment>
       <Particles
-        className="fixed z-0 opacity-300"
+        className="opacity-300 fixed z-0"
         id="tsparticles"
         init={particlesInit}
         options={particlesOptions}
       />
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen bg-gray-200">
+        <div className="flex min-h-screen flex-col bg-gray-200">
           <Menu />
           <Switch>
             <Route exact path="/news-from-the-wormhole">
