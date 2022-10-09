@@ -12,18 +12,18 @@ const Header: FunctionComponent<Props> = ({ articleType }) => {
     articleType === 'articles' ? articleAstronautImg : blogAstronautImg
   return (
     <React.Fragment>
-      <div className='z-40 p-4 mt-5 text-center'>
-        {/* <div className="flex flex-row flex-1 justify-center">
+      <div className="z-40 mt-5 p-4 text-center">
+        {/* <div className="flex flex-1 flex-row justify-center">
           <img
             className="object-contain lg:object-scale-down w-full h-24"
             src={imgSource}
             alt="astronaut image"
           />
         </div> */}
-          <h2 className="font-titillium-web text-lg text-white md:text-2xl lg:text-3xl leading-4">
-            Read the latest space flight {title.toLowerCase()}.
-          </h2>
-          <hr className='h-1 w-24 bg-white mt-5 inline-block rounded-sm'/>
+        <h2 className="font-titillium-web text-lg leading-4 text-white md:text-2xl lg:text-3xl">
+          Read the latest space flight {title.toLowerCase()}.
+        </h2>
+        <hr className="mt-5 inline-block h-1 w-24 rounded-sm bg-white" />
       </div>
     </React.Fragment>
   )
