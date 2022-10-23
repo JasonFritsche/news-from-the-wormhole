@@ -24,10 +24,13 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
 
   useEffect(() => {
     const loadArticles = async () => {
-      const data = await getArticles(startEntries, articleType).catch((err) => {
-        console.log(err)
-        setError(err)
-      })
+      const data = await getArticles(startEntries, articleType)
+
+      if (data.error) {
+        console.log(data.error)
+        setError(data.error)
+      }
+
       console.log(data)
 
       if (data.success) {
@@ -89,7 +92,7 @@ const FetchArticles: FunctionComponent<Props> = ({ articleType }) => {
           {content()}
         </div>
         {!isLoaded && (
-          <div className="mt-0 flex flex-row justify-center">
+          <div className="flex flex-row justify-center mt-0">
             <Loader />
           </div>
         )}
