@@ -1,7 +1,7 @@
 # News From the Wormhole
 Read the latest news articles and blog posts regarding space flight.
 
-## Built With 
+## Built With
 - [This awesome React/Tailwind/Vite/TypeScript boilerplate](https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate)
 - React
 - Tailwindcss
@@ -27,13 +27,13 @@ Please feel free to contribute to this open source project. First timers are mor
 
 ### Creating a new PR
 
-1. Make sure you are on the `master` branch, and you have pulled the latest changes.
+1. Make sure you are on the `main` branch, and you have pulled the latest changes.
 
-   > `git checkout master && git pull upstream master`
+   > `git checkout main && git pull upstream main`
 
 2. Install any new dependencies: `npm install`.
 
-3. Create a new branch off of the `master` branch.
+3. Create a new branch off of the `main` branch.
 
    > `git checkout -b [NEW BRANCH NAME]`
 
@@ -45,4 +45,4 @@ Please feel free to contribute to this open source project. First timers are mor
    > The subject of a commit message (the first line) should be 72 characters or less. If you need more room for a longer explanation of your changes, you can add a blank line below the subject and write a commit body. The commit message should be in present-imperative tense ("update README.md" rather than "updates" or "updated").
 
 6. Push your branch to your fork: `git push -u origin [BRANCH NAME]`.
-7. Open a new PR against the `master` branch from your fork using the GitHub user interface.
+7. Open a new PR against the `main` branch from your fork using the GitHub user interface.
